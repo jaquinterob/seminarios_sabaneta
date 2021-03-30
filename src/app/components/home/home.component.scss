@@ -1,0 +1,97 @@
+@function longshadow($color_a, $color_b, $stepnum, $opacity: 1) {
+    $gradient_steps: null;
+    @for $i from 1 through $stepnum {
+        $weight: ( ( $i - 1) / $stepnum) * 100;
+        $colour_mix: mix($color_b, rgba($color_a, $opacity), $weight);
+        $seperator: null;
+        @if($i !=$stepnum) {
+            $seperator: #{','};
+        }
+        $gradient_steps: append( #{$gradient_steps}, #{$i}px #{$i}px $colour_mix $seperator);
+    }
+    @return $gradient_steps;
+}
+
+.test-shadow {
+    perspective: 1000;
+    text-shadow: longshadow(darken(#2b5c72, 5%), #2b5c72, 50, 0.8);
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.card {
+    color: white;
+    background: #2b5c72;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.contenedor-tajeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.puntaje {
+    padding: 60px 0px;
+}
+
+.nombre {
+    padding: 13px 0px;
+    font-weight: lighter;
+    line-height: 0px;
+    font-size: 15px;
+}
+
+.apellido {
+    font-size: 18px;
+}
+
+.mat-card-avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0px 0px 15px 0px #73a1b6;
+    border: solid 1px #ffffff;
+}
+
+.contenedor-foto {
+    padding-top: 20px;
+}
+
+.mujer {
+    background: #7c4c7e;
+}
+
+.mujer .test-shadow {
+    perspective: 1000;
+    text-shadow: longshadow(darken(#7c4c7e, 5%), #7c4c7e, 50, 0.8);
+    font-size: 100px;
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 81%;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+}
+
+.contenedor-head {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
