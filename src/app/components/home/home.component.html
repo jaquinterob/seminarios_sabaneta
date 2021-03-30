@@ -1,124 +1,27 @@
-<div class="contenedor-head">
+<div class="contenedor-head animate__animated animate__fadeIn">
     <h1>Desafio 3.0 </h1>
     <p>Seminarios | <em>Sabaneta 2021</em></p>
 </div>
-<main>
-    <div class="row contenedor_card">
+<main class="row">
+    <div style class="row">
 
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card mujer">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
+        <div *ngFor="let participante of participantes; let indice=index" class="col l4 m6 s12  ">
+            <mat-card class="example-card card animate__animated animate__fadeInUp" [ngClass]="{'mujer': participantes[indice].sexo === 'f'}">
+                <div class=" detalles ">
+                    Ver más
+                </div>
+                <mat-card-content class="contenedor-tajeta ">
+                    <div class="contenedor-foto ">
+                        <img mat-card-avatar src="../../../assets/{{participante.foto}}.png" onerror="this.src='../../../assets/usuario.png'" alt=" ">
                     </div>
-                    <div class="nombre">
-                        John Alexander
+                    <div class="nombre ">
+                        {{participante.nombres}}
                     </div>
-                    <div class="apellido">
-                        Quintero Berrio
+                    <div class="apellido ">
+                        {{participante.apellidos}}
                     </div>
-                    <div class="puntaje test-shadow">
-                        10
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        John Alexander
-                    </div>
-                    <div class="apellido">
-                        Quintero Berrio
-                    </div>
-                    <div class="puntaje test-shadow">
-                        10
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        John Alexander
-                    </div>
-                    <div class="apellido">
-                        Quintero Berrio
-                    </div>
-                    <div class="puntaje test-shadow">
-                        10
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        Samuel Betancur
-
-                    </div>
-                    <div class="puntaje test-shadow">
-                        19
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        Jacob Vega
-
-                    </div>
-                    <div class="puntaje test-shadow">
-                        75
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        John Alexander Quintero
-
-                    </div>
-                    <div class="puntaje test-shadow">
-                        0
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col l4 m6 s12">
-            <mat-card class="example-card card mujer">
-                <mat-card-content class="contenedor-tajeta">
-                    <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/templo.jpg" alt="">
-                    </div>
-                    <div class="nombre">
-                        Danna Gutierrez
-
-                    </div>
-                    <div class="puntaje test-shadow">
-                        10
+                    <div class="puntaje test-shadow ">
+                        {{participante.puntaje}}
                     </div>
                 </mat-card-content>
             </mat-card>
