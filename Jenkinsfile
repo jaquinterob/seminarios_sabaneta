@@ -23,7 +23,7 @@ pipeline {
         }
         
          stage('Deploy') {
-            steps {sh 'sudo cp -r dist/seminarios_sabaneta/* /var/www/html/test/seminarios_sabaneta/'}
+            steps {sh 'sudo cp -r dist/seminariosSabaneta/* /var/www/html/test/seminarios_sabaneta/'}
         } 
         
     }
