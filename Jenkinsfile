@@ -22,6 +22,7 @@ pipeline {
         //     steps {sh 'sudo ng build --prod --base-href=/seminarios_sabaneta/'}
         // }
         
+<<<<<<< HEAD
         //  stage('Deploy') {
         //     steps {sh 'sudo cp -r dist/seminarios_sabaneta/* /var/www/html/test/seminarios_sabaneta/'}
         // } 
