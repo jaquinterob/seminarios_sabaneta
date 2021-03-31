@@ -10,7 +10,7 @@ pipeline {
             steps {sh 'sudo docker rm seminarios'}
         } 
 
-         stage('Docker make image') {
+         stage('Docker make image ') {
             steps {sh 'sudo docker build . -t seminarios_sabaneta:latest'}
         } 
 
