@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   getParticipantes(): any{
-    return this.http.get('http://localhost:5000/api/seminarios/participantes/all')
+    return this.http.get('http://aplicaciones.coopsana.com.co:5000/api/seminarios/participantes/all')
   }
 
 
