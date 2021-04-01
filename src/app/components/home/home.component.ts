@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { participanteInterface } from 'src/app/models/participante.interface';
 import { ApiService } from 'src/app/services/api.service';
 import {Chart} from 'chart.js'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   dataArray:any = []
   backgroundColorArray:any=[]
   
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router:Router) { }
 
   ngOnInit(): void {
     this.api.getParticipantes().subscribe(
@@ -126,5 +127,6 @@ export class HomeComponent implements OnInit {
 
 
   }
+
 
 }

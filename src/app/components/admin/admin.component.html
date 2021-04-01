@@ -1,1 +1,77 @@
-<p>admin works!</p>
+<br>
+<div class="alineacion">
+    <h1> Registrar Puntuación</h1>
+</div>
+<mat-divider></mat-divider>
+
+<br>
+<div class="contenedor-tarjetas row">
+    <div *ngFor="let participante of participantes; let indice=index" class="col l3 m6 s12">
+        <mat-card class="card ">
+            <mat-card-content>
+                <div class="alineacion">
+                    <span class="nombre">{{(participante.nombres).split(' ')[0]}}
+                        {{(participante.apellidos).split(' ')[0]}}</span>
+                </div>
+                <mat-divider></mat-divider>
+                <br>
+                <div class="contenedor-puntos">
+                    <span class="puntaje">{{participante.puntaje}}</span>
+                </div>
+                <mat-form-field class="tipo-puntos" appearance="fill">
+                    <mat-label>Seleccione</mat-label>
+                    <mat-select [(ngModel)]="participante.select">
+                        <mat-option *ngFor="let item of select" [value]="item.valor">
+                            {{item.clave}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button (click)="sumar(indice)" class="tipo-puntos" mat-raised-button color="primary">Agregar
+                    {{participante.select === 0 ? '':participante.select+(participante.select > 1 ? ' puntos':' punto' )}}</button>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+</div>
+
+<br>
+<mat-divider></mat-divider>
+
+<br>
+<div class="alineacion">
+    <h1>Agregar Alumno</h1>
+</div>
+<div class="row">
+
+    <div class="col l6 offset-l3 s12 row add-user">
+
+
+        <div class="col s12">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombres</mat-label>
+                <input [(ngModel)]="nombres" matInput>
+            </mat-form-field>
+        </div>
+        <div class="col s12">
+            <mat-form-field class="example-full-width">
+                <mat-label>Apellidos</mat-label>
+                <input [(ngModel)]="apellidos" matInput>
+            </mat-form-field>
+        </div>
+        <div class="col s12">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Seleccione</mat-label>
+                <mat-select [(ngModel)]="sexo">
+                    <mat-option *ngFor="let item of selectSexo" [value]="item.valor">
+                        {{item.clave}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col s12">
+            <button (click)="crearParticipante()" [disabled]="nombres == '' || apellidos == '' || sexo == ''" class="example-full-width" mat-raised-button color="primary">Agregar</button>
+        </div>
+    </div>
+</div>
+<hr>

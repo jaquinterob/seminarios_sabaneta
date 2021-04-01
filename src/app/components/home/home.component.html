@@ -7,11 +7,9 @@
 
         <div *ngFor="let participante of participantes; let indice=index" class="col l4 m6 s12  ">
             <mat-card class="example-card card animate__animated animate__fadeInUp" [ngClass]="{'mujer': participantes[indice].sexo === 'f'}">
-                <div class=" detalles ">
-                    Ver más
-                </div>
+
                 <mat-card-content class="contenedor-tajeta ">
-                    <div class="contenedor-foto ">
+                    <div class="contenedor-foto">
                         <img mat-card-avatar src="../../../assets/{{participante.foto}}.png" onerror="this.src='../../../assets/usuario.png'" alt=" ">
                     </div>
                     <div class="nombre ">

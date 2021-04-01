@@ -1,19 +1,12 @@
 export interface participanteInterface{
-    nombres?: string,
-    apellidos?: string,
-    edad?: number,
-    sexo?:string,
-    puntaje?:number,
-    camara?: number,
-    participacionExpontanea?:number
-    asignacion?:number
-    dominio?:number
-    asistencia?:number
-    puntualidad?:number
-    mySeminaryDiario?:number
-    mySeminaryResgistrosAnteriores?:number
+    _id?:string,
+    nombres: string,
+    apellidos: string,
+    sexo:string,
+    puntaje:number,
     activo?:number
     foto?:string
     lastUpdate?:number
+    select:number
 }
 
