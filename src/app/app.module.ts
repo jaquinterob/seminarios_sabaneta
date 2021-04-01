@@ -17,6 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     FormsModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

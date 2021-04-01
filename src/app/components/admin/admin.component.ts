@@ -93,4 +93,14 @@ export class AdminComponent implements OnInit {
     )
   }
 
+  deleteParticipante(participante:participanteInterface){
+    this.api.deleteParticipante(participante).subscribe(
+      (res:any)=>{
+        if(res.ok){
+          this.ngOnInit()
+        }
+      }
+    )
+  }
+
 }

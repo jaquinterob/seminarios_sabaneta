@@ -21,4 +21,8 @@ export class ApiService {
     return this.http.post('http://aplicaciones.coopsana.com.co:5000/api/seminarios/participantes/add',participante)
   }
 
+  deleteParticipante(participante:participanteInterface){
+    return this.http.delete(`http://aplicaciones.coopsana.com.co:5000/api/seminarios/participantes/${participante._id}`)
+  }
+
 }
