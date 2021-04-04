@@ -69,7 +69,7 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  crearParticipante(): any{
+  crearParticipante(): void{
     const nuevoParticipante = {
       nombres: this.nombres,
       apellidos: this.apellidos,
@@ -93,7 +93,7 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  deleteParticipante(participante: ParticipanteInterface): any{
+  deleteParticipante(participante: ParticipanteInterface): void{
     this.api.deleteParticipante(participante).subscribe(
       (res: any) => {
         if (res.ok){
