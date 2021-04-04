@@ -2,6 +2,10 @@ pipeline {
     agent any
     stages {
 
+        stage('Lint') {
+            steps {sh 'sudo ng lint'}
+        } 
+
         stage('Docker stop') {
             steps {sh 'sudo docker stop seminarios'}
         } 
