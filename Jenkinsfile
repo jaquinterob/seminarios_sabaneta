@@ -6,7 +6,7 @@ pipeline {
             steps {sh 'sudo ng lint'}
         } 
         stage('Test') {
-            steps {sh 'sudo ng test'}
+            steps {sh 'sudo ng test --browsers ChromeHeadless'}
         } 
 
         stage('Docker stop') {
