@@ -46,10 +46,10 @@ export class AdminComponent implements OnInit {
 
   sumar(indice: number): any {
     if (this.participantes[indice].select !== 0) {
+      this.participantes[indice].puntaje = (this.participantes[indice].puntaje + this.participantes[indice].select) <= 100
+        ? (this.participantes[indice].puntaje + this.participantes[indice].select) : 100;
+      console.log(this.participantes[indice].puntaje);
 
-
-
-      this.participantes[indice].puntaje = this.participantes[indice].puntaje + this.participantes[indice].select;
       this.participantes[indice].select = 0;
       this.api.updateParticipante(this.participantes[indice]).subscribe(
         (res: any) => {
@@ -69,7 +69,7 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  crearParticipante(): void{
+  crearParticipante(): void {
     const nuevoParticipante = {
       nombres: this.nombres,
       apellidos: this.apellidos,
@@ -80,7 +80,7 @@ export class AdminComponent implements OnInit {
     };
     this.api.addParticipante(nuevoParticipante).subscribe(
       (res: any) => {
-        if (res.ok){
+        if (res.ok) {
           this.toast.open(res.message, '', {
             duration: 3000,
             panelClass: ['mat-toolbar', 'mat-primary'],
@@ -100,10 +100,10 @@ export class AdminComponent implements OnInit {
     return respuesta.toLowerCase();
   }
 
-  deleteParticipante(participante: ParticipanteInterface): void{
+  deleteParticipante(participante: ParticipanteInterface): void {
     this.api.deleteParticipante(participante).subscribe(
       (res: any) => {
-        if (res.ok){
+        if (res.ok) {
           this.ngOnInit();
         }
       }
