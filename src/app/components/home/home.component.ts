@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
     this.api.getParticipantes().subscribe(
       (res: any) => {
         this.participantes = res.participantes;
+        console.log(this.participantes);
 
         for (const participante of this.participantes) {
           this.labelsArray.push((participante.nombres)?.split(' ')[0] + ' ' + (participante.apellidos)?.split(' ')[0]);

@@ -74,6 +74,7 @@ export class AdminComponent implements OnInit {
       nombres: this.nombres,
       apellidos: this.apellidos,
       sexo: this.sexo,
+      foto: this.convertirNombresAFoto((this.nombres).trim() + ' ' + (this.apellidos).trim()),
       puntaje: 0,
       select: 0
     };
@@ -91,6 +92,12 @@ export class AdminComponent implements OnInit {
         }
       }
     );
+  }
+
+  convertirNombresAFoto(nombreCompleto: string): string {
+    const arrayNombre = nombreCompleto.split(' ');
+    const respuesta = arrayNombre.join('_');
+    return respuesta.toLowerCase();
   }
 
   deleteParticipante(participante: ParticipanteInterface): void{
