@@ -14,8 +14,6 @@ export class ApiService {
   }
 
   updateParticipante(participante: ParticipanteInterface): any{
-    console.log(participante);
-    
     return this.http.put('http://localhost:5000/api/seminarios/participantes/', participante);
   }
 
