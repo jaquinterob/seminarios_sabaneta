@@ -2,6 +2,7 @@ import { ParticipanteInterface } from 'src/app/models/participante.interface';
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-admin',
@@ -48,7 +49,8 @@ export class AdminComponent implements OnInit {
     if (this.participantes[indice].select !== 0) {
       this.participantes[indice].puntaje = (this.participantes[indice].puntaje + this.participantes[indice].select) <= 100
         ? (this.participantes[indice].puntaje + this.participantes[indice].select) : 100;
-      console.log(this.participantes[indice].puntaje);
+      this.participantes[indice].lastUpdate = new Date().toLocaleDateString() + ' ' + (new Date().toTimeString()).split(' ')[0]
+      console.log(this.participantes[indice].lastUpdate);
 
       this.participantes[indice].select = 0;
       this.api.updateParticipante(this.participantes[indice]).subscribe(
@@ -108,6 +110,13 @@ export class AdminComponent implements OnInit {
         }
       }
     );
+  }
+
+  calcularFecha() { 
+    const f = new Date()
+    return `${f.getFullYear()}-${(f.getMonth() + 1) < 10 ? 
+      '0' + (f.getMonth() + 1) : (f.getMonth() + 1)}-${f.getDate() < 10 ? 
+        '0' + f.getDate() : f.getDate()} ${f.getHours()}:${f.getSeconds()}`;
   }
 
 }

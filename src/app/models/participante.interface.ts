@@ -6,7 +6,7 @@ export interface ParticipanteInterface{
     puntaje: number;
     activo?: number;
     foto?: string;
-    lastUpdate?: number;
+    lastUpdate?: string;
     select: number;
 }
 
