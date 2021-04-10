@@ -7,7 +7,7 @@ pipeline {
         } 
 
         stage('Build') {
-            steps {sh 'sudo ng build --prod --base-href=/seminariosSabaneta/'}
+            steps {sh 'sudo ng build --prod --base-href=/torneo/'}
         }
         
         stage('Deploy') {
