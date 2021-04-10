@@ -10,13 +10,13 @@
 
                 <mat-card-content class="contenedor-tajeta ">
                     <div *ngIf="competidor.puntaje === 100" class="contenedor-trofeo">
-                        <img height="70" src="../../../assets/trofeo.png" alt=" ">
+                        <img height="70" src="./assets/trofeo.png" alt=" ">
                     </div>
                     <div *ngIf="competidor.puntaje >= 88 && competidor.puntaje  < 100" class="contenedor-trofeo">
-                        <img height="70" src="../../../assets/corona.png" alt=" ">
+                        <img height="70" src="./assets/corona.png" alt=" ">
                     </div>
                     <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/{{competidor.foto}}.jpg" onerror="this.src='../../../assets/usuario.png'" alt=" ">
+                        <img mat-card-avatar src="./assets/{{competidor.foto}}.jpg" onerror="this.src='./assets/usuario.png'" alt=" ">
                     </div>
                     <div class="nombre ">
                         {{competidor.nombres}}
@@ -86,7 +86,7 @@
         <img width="100" src="http://1000marcas.net/wp-content/uploads/2019/11/WhatsApp-logo.png" alt="" srcset="">
     </a>
     <a href="https://wa.link/9rryxy" target='_blanck'>
-        <img width="80" src="../../../assets/whatsapp.png" alt="" srcset="">
+        <img width="80" src="./assets/whatsapp.png" alt="" srcset="">
     </a>
 </main>
 <br>

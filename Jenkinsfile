@@ -7,11 +7,11 @@ pipeline {
         } 
 
         stage('Build') {
-            steps {sh 'sudo ng build --prod --base-href=/test/'}
+            steps {sh 'sudo ng build --prod --base-href=/test/torneo/'}
         }
         
         stage('Deploy') {
-            steps {sh 'sudo cp -r dist/seminariosSabaneta/* /var/www/html/test/'}
+            steps {sh 'sudo cp -r dist/seminariosSabaneta/* /var/www/html/test/torneo/'}
         }
         
     }
