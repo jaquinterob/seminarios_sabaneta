@@ -1,13 +1,13 @@
 pipeline {
     agent any
     stages {
-        
+
         stage('npm install') {
             steps {sh 'sudo npm install'}
         } 
 
         stage('Build') {
-            steps {sh 'sudo ng build --prod --base-href=/torneo/'}
+            steps {sh 'sudo ng build --prod --base-href=/test/torneo/'}
         }
         
         stage('Deploy') {
