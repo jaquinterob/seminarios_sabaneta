@@ -6,7 +6,7 @@
 
 <br>
 <div class="contenedor-tarjetas row">
-    <div *ngFor="let participante of participantes; let indice=index" class="col l3 m6 s12">
+    <div *ngFor="let competidor of competidores; let indice=index" class="col l3 m6 s12">
         <mat-card class="card ">
             <mat-card-content>
 
@@ -15,31 +15,31 @@
                         <mat-icon>more_vert</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button (click)="deleteParticipante(participantes[indice])" mat-menu-item>
+                        <button (click)="deleteParticipante(competidores[indice])" mat-menu-item>
                             <mat-icon style="color :red">delete</mat-icon>
                             <span>Eliminar Alumno</span>
                         </button>
                     </mat-menu>
                 </div>
                 <div class="alineacion">
-                    <span class="nombre">{{(participante.nombres).split(' ')[0]}}
-                        {{(participante.apellidos).split(' ')[0]}}</span>
+                    <span class="nombre">{{(competidor.nombres).split(' ')[0]}}
+                        {{(competidor.apellidos).split(' ')[0]}}</span>
                 </div>
                 <mat-divider></mat-divider>
                 <br>
                 <div class="contenedor-puntos">
-                    <span class="puntaje">{{participante.puntaje}}</span>
+                    <span class="puntaje">{{competidor.puntaje}}</span>
                 </div>
                 <mat-form-field class="tipo-puntos" appearance="fill">
                     <mat-label>Seleccione</mat-label>
-                    <mat-select [(ngModel)]="participante.select">
+                    <mat-select [(ngModel)]="competidor.select">
                         <mat-option *ngFor="let item of select" [value]="item.valor">
                             {{item.clave}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <button (click)="sumar(indice)" class="tipo-puntos" mat-raised-button color="primary">Agregar
-                    {{participante.select === 0 ? '':participante.select+(participante.select > 1 ? ' puntos':' punto' )}}</button>
+                    {{competidor.select === 0 ? '':competidor.select+(competidor.select > 1 ? ' puntos':' punto' )}}</button>
             </mat-card-content>
         </mat-card>
 

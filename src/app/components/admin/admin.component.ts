@@ -1,4 +1,4 @@
-import { ParticipanteInterface } from 'src/app/models/participante.interface';
+import { CompetidorInterface } from 'src/app/models/competidor.interface';
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,7 +10,7 @@ import * as moment from 'moment';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  participantes: ParticipanteInterface[] = [];
+  competidores: CompetidorInterface[] = [];
   valorSelect = 0;
   select = [
     { clave: 'Asistencia - 2', valor: 2 },
@@ -38,7 +38,7 @@ export class AdminComponent implements OnInit {
     this.api.getParticipantes().subscribe(
       (res: any) => {
         if (res.ok) {
-          this.participantes = res.participantes;
+          this.competidores = res.competidores;
 
         }
       }
@@ -46,14 +46,14 @@ export class AdminComponent implements OnInit {
   }
 
   sumar(indice: number): any {
-    if (this.participantes[indice].select !== 0) {
-      this.participantes[indice].puntaje = (this.participantes[indice].puntaje + this.participantes[indice].select) <= 100
-        ? (this.participantes[indice].puntaje + this.participantes[indice].select) : 100;
-      this.participantes[indice].lastUpdate = new Date().toLocaleDateString() + ' ' + (new Date().toTimeString()).split(' ')[0];
-      console.log(this.participantes[indice].lastUpdate);
+    if (this.competidores[indice].select !== 0) {
+      this.competidores[indice].puntaje = (this.competidores[indice].puntaje + this.competidores[indice].select) <= 100
+        ? (this.competidores[indice].puntaje + this.competidores[indice].select) : 100;
+      this.competidores[indice].lastUpdate = new Date().toLocaleDateString() + ' ' + (new Date().toTimeString()).split(' ')[0];
+      console.log(this.competidores[indice].lastUpdate);
 
-      this.participantes[indice].select = 0;
-      this.api.updateParticipante(this.participantes[indice]).subscribe(
+      this.competidores[indice].select = 0;
+      this.api.updateParticipante(this.competidores[indice]).subscribe(
         (res: any) => {
           console.log(res.message);
           this.toast.open(res.message, '', {
@@ -102,8 +102,8 @@ export class AdminComponent implements OnInit {
     return respuesta.toLowerCase();
   }
 
-  deleteParticipante(participante: ParticipanteInterface): void {
-    this.api.deleteParticipante(participante).subscribe(
+  deleteParticipante(competidor: CompetidorInterface): void {
+    this.api.deleteParticipante(competidor).subscribe(
       (res: any) => {
         if (res.ok) {
           this.ngOnInit();

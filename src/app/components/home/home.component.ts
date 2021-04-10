@@ -1,5 +1,5 @@
+import { CompetidorInterface } from './../../models/competidor.interface';
 import { Component, OnInit } from '@angular/core';
-import { ParticipanteInterface } from 'src/app/models/participante.interface';
 import { ApiService } from 'src/app/services/api.service';
 import {Chart} from 'chart.js';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  participantes: ParticipanteInterface[] = [];
+  competidores: CompetidorInterface[] = [];
   labelsArray: any = [];
   dataArray: any = [];
   backgroundColorArray: any = [];
@@ -21,13 +21,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.api.getParticipantes().subscribe(
       (res: any) => {
-        this.participantes = res.participantes;
-        console.log(this.participantes);
+        this.competidores = res.competidores;
+        console.log(this.competidores);
 
-        for (const participante of this.participantes) {
-          this.labelsArray.push((participante.nombres)?.split(' ')[0] + ' ' + (participante.apellidos)?.split(' ')[0]);
-          this.dataArray.push(participante.puntaje);
-          this.backgroundColorArray.push(participante.sexo === 'm' ? '#2b5c72cf' : '#7c4c7ed4');
+        for (const competidor of this.competidores) {
+          this.labelsArray.push((competidor.nombres)?.split(' ')[0] + ' ' + (competidor.apellidos)?.split(' ')[0]);
+          this.dataArray.push(competidor.puntaje);
+          this.backgroundColorArray.push(competidor.sexo === 'm' ? '#2b5c72cf' : '#7c4c7ed4');
         }
 
         console.log(this.backgroundColorArray);

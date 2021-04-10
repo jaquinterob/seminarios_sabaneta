@@ -5,30 +5,30 @@
 <main class="row">
     <div style class="row">
 
-        <div *ngFor="let participante of participantes; let indice=index" class="col l4 m6 s12  ">
-            <mat-card class="example-card card animate__animated animate__fadeInUp" [ngClass]="{'mujer': participantes[indice].sexo === 'f'}">
+        <div *ngFor="let competidor of competidores; let indice=index" class="col l4 m6 s12  ">
+            <mat-card class="example-card card animate__animated animate__fadeInUp" [ngClass]="{'mujer': competidores[indice].sexo === 'f'}">
 
                 <mat-card-content class="contenedor-tajeta ">
-                    <div *ngIf="participante.puntaje === 100" class="contenedor-trofeo">
+                    <div *ngIf="competidor.puntaje === 100" class="contenedor-trofeo">
                         <img height="70" src="../../../assets/trofeo.png" alt=" ">
                     </div>
-                    <div *ngIf="participante.puntaje >= 88 && participante.puntaje  < 100" class="contenedor-trofeo">
+                    <div *ngIf="competidor.puntaje >= 88 && competidor.puntaje  < 100" class="contenedor-trofeo">
                         <img height="70" src="../../../assets/corona.png" alt=" ">
                     </div>
                     <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/{{participante.foto}}.jpg" onerror="this.src='../../../assets/usuario.png'" alt=" ">
+                        <img mat-card-avatar src="../../../assets/{{competidor.foto}}.jpg" onerror="this.src='../../../assets/usuario.png'" alt=" ">
                     </div>
                     <div class="nombre ">
-                        {{participante.nombres}}
+                        {{competidor.nombres}}
                     </div>
                     <div class="apellido ">
-                        {{participante.apellidos}}
+                        {{competidor.apellidos}}
                     </div>
                     <div class="puntaje test-shadow ">
-                        {{participante.puntaje}}
+                        {{competidor.puntaje}}
                     </div>
                     <div class="last-update">
-                        Actualizado: {{participante.lastUpdate}}
+                        Actualizado: {{competidor.lastUpdate}}
                     </div>
                 </mat-card-content>
             </mat-card>
