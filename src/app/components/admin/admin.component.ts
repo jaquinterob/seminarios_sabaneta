@@ -47,8 +47,7 @@ export class AdminComponent implements OnInit {
 
   sumar(indice: number): any {
     if (this.competidores[indice].select !== 0) {
-      this.competidores[indice].puntaje = (this.competidores[indice].puntaje + this.competidores[indice].select) <= 100
-        ? (this.competidores[indice].puntaje + this.competidores[indice].select) : 100;
+      this.competidores[indice].puntaje = this.competidores[indice].puntaje + this.competidores[indice].select
       this.competidores[indice].lastUpdate = new Date().toLocaleDateString() + ' ' + (new Date().toTimeString()).split(' ')[0];
       console.log(this.competidores[indice].lastUpdate);
 
