@@ -18,6 +18,10 @@
                     <div *ngIf="indice===2" class="contenedor-trofeo">
                         <img height="70" src="./assets/corona.png" alt=" ">
                     </div>
+
+                    <div *ngIf="indice === (competidores.length -1 )" class="contenedor-trofeo">
+                        <img height="70" src="./assets/burro.png" alt=" ">
+                    </div>
                     <div class="contenedor-foto">
                         <img mat-card-avatar src="./assets/{{competidor.foto}}.jpg" onerror="this.src='./assets/usuario.png'" alt=" ">
                     </div>
