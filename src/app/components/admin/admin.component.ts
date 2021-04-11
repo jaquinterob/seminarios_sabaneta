@@ -13,14 +13,14 @@ export class AdminComponent implements OnInit {
   competidores: CompetidorInterface[] = [];
   valorSelect = 0;
   select = [
-    { clave: 'Asistencia - 2', valor: 2 },
-    { clave: 'Puntualidad - 1', valor: 1 },
-    { clave: 'Camara - 1', valor: 1 },
-    { clave: 'Participación por asignación  - 1', valor: 1 },
-    { clave: 'Participación por iniciativa - 1', valor: 1 },
-    { clave: 'Lectura mySeminary Diaria - 3', valor: 3 },
-    { clave: 'Reporte 100% Seminarios - 15', valor: 15 },
-    { clave: 'Dominio - 13', valor: 13 },
+    { clave: '5', valor: 5 },
+    { clave: '10', valor: 10 },
+    { clave: '15', valor: 15 },
+    { clave: '20', valor: 20 },
+    { clave: '25', valor: 25 },
+    { clave: '30', valor: 30 },
+    { clave: '35', valor: 35 },
+    { clave: '40', valor: 40 },
   ];
 
 
