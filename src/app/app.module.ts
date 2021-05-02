@@ -18,13 +18,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalPasswordComponent } from './components/modals/modal-password/modal-password.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    ModalPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { MatMenuModule } from '@angular/material/menu';
     FormsModule,
     MatSnackBarModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

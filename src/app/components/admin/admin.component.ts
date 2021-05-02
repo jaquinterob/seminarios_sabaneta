@@ -1,8 +1,11 @@
+import { Router } from '@angular/router';
 import { CompetidorInterface } from 'src/app/models/competidor.interface';
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as moment from 'moment';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalPasswordComponent } from '../modals/modal-password/modal-password.component';
 
 @Component({
   selector: 'app-admin',
@@ -21,6 +24,8 @@ export class AdminComponent implements OnInit {
     { clave: '30', valor: 30 },
     { clave: '35', valor: 35 },
     { clave: '40', valor: 40 },
+    { clave: '50', valor: 50 },
+    { clave: '100', valor: 100 },
   ];
 
 
@@ -32,9 +37,15 @@ export class AdminComponent implements OnInit {
     { clave: 'Femenino', valor: 'f' }
   ];
 
-  constructor(private api: ApiService, private toast: MatSnackBar) { }
+  constructor(
+    private readonly api: ApiService,
+    private readonly toast: MatSnackBar,
+    private readonly dialog: MatDialog,
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.security();
     this.api.getParticipantes().subscribe(
       (res: any) => {
         if (res.ok) {
@@ -47,7 +58,7 @@ export class AdminComponent implements OnInit {
 
   sumar(indice: number): any {
     if (this.competidores[indice].select !== 0) {
-      this.competidores[indice].puntaje = this.competidores[indice].puntaje + this.competidores[indice].select
+      this.competidores[indice].puntaje = this.competidores[indice].puntaje + this.competidores[indice].select;
       this.competidores[indice].lastUpdate = new Date().toLocaleDateString() + ' ' + (new Date().toTimeString()).split(' ')[0];
       console.log(this.competidores[indice].lastUpdate);
 
@@ -109,6 +120,24 @@ export class AdminComponent implements OnInit {
         }
       }
     );
+  }
+
+  security(): void {
+    const dialogRef = this.dialog.open(ModalPasswordComponent, { disableClose: true });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) {
+        this.router.navigate(['/']);
+        this.toast.open('No eres el Obispo 😡 ', 'ok', {
+          duration: 10000,
+          panelClass: ['mat-toolbar', 'mat-primary'],
+        });
+      }else{
+        this.toast.open('Bienvenido Obispo Quintero 😀', 'ok', {
+          duration: 10000
+        });
+      }
+    });
   }
 
 }
