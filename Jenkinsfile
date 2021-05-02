@@ -6,7 +6,7 @@ pipeline {
             steps {sh 'sudo npm install'}
         } 
 
-        stage('Build') {
+        stage('lint') {
             steps {sh 'sudo ng lint --fix'}
         }
 
