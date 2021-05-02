@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: 'maestra', component: AdminComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'obispo', component: AdminComponent },
+  { path: '**', redirectTo: 'obispo' }
 ];
 
 @NgModule({

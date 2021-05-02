@@ -16,6 +16,10 @@ export class AdminComponent implements OnInit {
   competidores: CompetidorInterface[] = [];
   valorSelect = 0;
   select = [
+    { clave: '1', valor: 1 },
+    { clave: '2', valor: 2 },
+    { clave: '3', valor: 3 },
+    { clave: '4', valor: 4 },
     { clave: '5', valor: 5 },
     { clave: '10', valor: 10 },
     { clave: '15', valor: 15 },
@@ -46,11 +50,14 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.security();
+    this.getParticipantes();
+  }
+
+  getParticipantes(): void{
     this.api.getParticipantes().subscribe(
       (res: any) => {
         if (res.ok) {
           this.competidores = res.competidores;
-
         }
       }
     );
@@ -97,7 +104,7 @@ export class AdminComponent implements OnInit {
             duration: 3000,
             panelClass: ['mat-toolbar', 'mat-primary'],
           });
-          this.ngOnInit();
+          this.getParticipantes();
           this.nombres = '';
           this.apellidos = '';
           this.sexo = '';
@@ -116,7 +123,7 @@ export class AdminComponent implements OnInit {
     this.api.deleteParticipante(competidor).subscribe(
       (res: any) => {
         if (res.ok) {
-          this.ngOnInit();
+          this.getParticipantes();
         }
       }
     );

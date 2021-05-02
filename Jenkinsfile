@@ -7,6 +7,10 @@ pipeline {
         } 
 
         stage('Build') {
+            steps {sh 'sudo ng lint --fix'}
+        }
+
+        stage('Build') {
             steps {sh 'sudo ng build --prod --base-href=/test/torneo/'}
         }
         

@@ -10,7 +10,7 @@ export class ModalPasswordComponent {
   hide = true;
   pass = 'si';
 
-  constructor(private readonly toast:MatSnackBar){}
+  constructor(private readonly toast: MatSnackBar){}
 
   validation(): boolean{
     return this.pass === 'matrimonio';
