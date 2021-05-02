@@ -5,7 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: 'obispo', component: AdminComponent },
-  { path: '**', redirectTo: 'obispo' }
+  { path: '', component: HomeComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
