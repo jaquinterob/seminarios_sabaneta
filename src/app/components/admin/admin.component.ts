@@ -13,14 +13,12 @@ export class AdminComponent implements OnInit {
   participantes: ParticipanteInterface[] = [];
   valorSelect = 0;
   select = [
-    { clave: 'Asistencia - 2', valor: 2 },
-    { clave: 'Puntualidad - 1', valor: 1 },
-    { clave: 'Camara - 1', valor: 1 },
-    { clave: 'Participación por asignación  - 1', valor: 1 },
-    { clave: 'Participación por iniciativa - 1', valor: 1 },
-    { clave: 'Lectura mySeminary Diaria - 3', valor: 3 },
-    { clave: 'Reporte 100% Seminarios - 15', valor: 15 },
-    { clave: 'Dominio - 13', valor: 13 },
+    { clave: 'Indexó 1 lote - 10', valor: 10 },
+    { clave: 'Agregó 5 fotos ó más - 10', valor: 10 },
+    { clave: 'Agregó 6 ó más historias o recuerdos - 10', valor: 10 },
+    { clave: 'Anotó 7 ó más fechas - 10', valor: 10 },
+    { clave: 'Completó arbol genealógico - 10', valor: 10 },
+    { clave: 'Escribió el testimonio - 20', valor: 20 }
   ];
 
 
