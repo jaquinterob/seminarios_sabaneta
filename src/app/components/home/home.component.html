@@ -1,6 +1,6 @@
 <div class="contenedor-head animate__animated animate__fadeIn">
-    <h1>Desafio 3.0 </h1>
-    <p>Primaria | <em>Sabaneta 2021</em> | Reto de História Familia</p>
+    <h1>Reto de Historia Familiar </h1>
+    <p>Primaria | <em>Sabaneta 2021</em></p>
 </div>
 <main class="row">
     <div style class="row">
@@ -10,13 +10,13 @@
 
                 <mat-card-content class="contenedor-tajeta ">
                     <div *ngIf="participante.puntaje === 100" class="contenedor-trofeo">
-                        <img height="70" src="../../../assets/trofeo.png" alt=" ">
+                        <img height="70" src="assets/trofeo.png" alt=" ">
                     </div>
                     <div *ngIf="participante.puntaje >= 88 && participante.puntaje  < 100" class="contenedor-trofeo">
-                        <img height="70" src="../../../assets/corona.png" alt=" ">
+                        <img height="70" src="assets/corona.png" alt=" ">
                     </div>
                     <div class="contenedor-foto">
-                        <img mat-card-avatar src="../../../assets/{{participante.foto}}.jpg" onerror="this.src='../../../assets/usuario.png'" alt=" ">
+                        <img mat-card-avatar src="assets/{{participante.foto}}.jpg" onerror="this.src='assets/usuario.png'" alt=" ">
                     </div>
                     <div class="nombre ">
                         {{participante.nombres}}
@@ -65,7 +65,7 @@
             <br>
             <h2>Premios por esfuerzo</h2>
             <p>Los niños o niñas que igualen o superen los 80 puntos recibiran un premio por su esfuerzo</p>
-            <p>Los niños o niñas que obtengan <span class="parpadea">100 puntos</span> obtendran una <span class="parpadea">placa</span> de reconocimiento por haber tenido un desempeño perfecto en el Reto de Historia Familiar
+            <p>Los niños o niñas que obtengan <span class="parpadea">100 puntos</span> obtendran <span class="parpadea">un obsequio y una mención de reconocimiento</span> por haber tenido un desempeño perfecto en el Reto de Historia Familiar
             </p>
             <br>
             <mat-divider></mat-divider>
